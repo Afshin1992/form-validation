@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/easySelectStyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts/easySelect.js"></script>
+    <script src="scripts/employee-script.js"></script>
+    <title>Employee Management</title>
+    <style>
+        thead {
+            border-bottom: 1px solid #939090;
+            font-weight: bold;
+        }
+        
+        td {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Employee Management</a>
+        </nav>
+        <div class="card m-3">
+            <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="fname-input">first name</label>
+                        <input type="text" class="form-control" name="fname" placeholder="first name">
+                    </div>
+                    <div class="form-group col">
+                        <label for="lname-input">last name</label>
+                        <input type="text" class="form-control" name="lname" placeholder="last name">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="email-input">Email</label>
+                        <input type="text" class="form-control" name="email" placeholder="email">
+                    </div>
+                    <div class="form-group col">
+                        <label for="joind-date">Joined Date</label>
+                        <input type="date" class="form-control" name="joined">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="city-input">City</label>
+                        <input type="text" class="form-control" name="city" placeholder="city">
+                    </div>
+                    <div class="form-group col">
+                        <label for="pcode-input">Postal Code</label>
+                        <input type="text" class="form-control" name="pcode" placeholder="A1A 1A1">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="my-select">Availabilities</label>
+                        <select multiple class="form-control" name="available">
+                            <option value="sunday">Sunday</option>
+                            <option value="monday">Monday</option>
+                            <option value="tuesday">Tuesday</option>
+                            <option value="wednesday">Wednesday</option>
+                            <option value="thursday">Thursday</option>
+                            <option value="friday">Friday</option>
+                            <option value="saturday">Saturday</option>
+                        </select>
+                    </div>
+                </div>
+                <input type="submit" value="Submit">
+
+            </form>
+        </div>
+        <div class="mx-3"><button class="btn btn-outline-success px-4" id="btn-show">Show</button></div>
+        <div id="table" class='m-3'></div>
+    </div>
+</body>
+
+</html>
